@@ -1,0 +1,283 @@
+@import 'https://fonts.googleapis.com/css?family=Fira+Sans';
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.registerArea {
+  font-family: "Fira Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+.registerArea:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.58);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.wrapper {
+  max-width: 100%;
+  background-color: transparent;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  /**************************************************** */
+  /********************* LOGIN FORM ******************* */
+  /**************************************************** */
+}
+.wrapper .login {
+  padding-top: 20%;
+  width: 100%;
+}
+.wrapper .login .profile{
+  height: 20%;
+  width: 20%;
+  border-radius: 100%;
+  margin: 0 auto;
+  margin-bottom: 15%;
+  position: relative;
+}
+.wrapper .login .profile img{
+	height: 200px;
+  width: 200px;
+  color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.wrapper .login .form-element {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #000;
+}
+/*transparent for selects */
+.wrapper .login .form-element.container-fluid{
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid transparent;
+}
+.wrapper .login .form-element .ay7aga span {
+  display: inline-block;
+  width: 20%;
+  color: #000;
+  font-family: 'Amiri', serif;
+}
+
+.wrapper .login .form-element .ay7aga .check-input {
+  font-family: 'Amiri', serif;
+}
+
+.wrapper .login .form-element .ay7aga .check-input input{
+  display: inline-block;
+  width: 3%;
+  color: rgba(0, 0, 0, 0.8);
+}
+.wrapper .login .form-element .ay7aga .check-input label{
+  display: inline;
+  width: 20%;
+  color: rgba(0, 0, 0, 0.8);
+
+}
+
+.wrapper .login .form-element .ay7aga input {
+  font-family: "Fira Sans", sans-serif;
+  display: inline-block;
+  width: 79%;
+  margin: 20px 0 0 0;
+  padding: 10px 10px 10px 20px;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'Droid Arabic Naskh', serif;
+
+}
+
+.wrapper .login .form-element .ay7aga input::-webkit-input-placeholder{
+  color: 	#A9A9A9;
+  font-size: 1em;
+  font-weight: 500;
+}
+.wrapper .login .form-element .ay7aga input:-ms-input-placeholder{
+  color: 	#A9A9A9;
+  font-size: 1em;
+  font-weight: 500;
+}
+.wrapper .login .form-element .ay7aga input::-ms-input-placeholder {
+  color: 	#A9A9A9;
+  font-size: 1em;
+  font-weight: 500;
+}
+.wrapper .login .form-element .ay7aga input::placeholder{
+  color: 	#A9A9A9;
+  font-size: 1em;
+  font-weight: 500;
+}
+.wrapper .login button {
+  position: relative;
+  margin: 30px 0;
+  width: 50%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  background: #f23030;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  left:25%;
+  right:25%;
+}
+.wrapper .login button:hover ,.wrapper .login button:focus{
+	background: #d23030;
+	transition: all 0ms ease-in-out 0ms;
+}
+
+
+.login{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+@media screen and (max-width: 480px) {
+  .wrapper .login .profile {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 40px;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*for limitation Me */
+
+.wrapper .login .form-element.has-invalid{
+  border-bottom: 2px solid #c80000;
+  transition: 0.5s;
+}
+
+.wrapper .login .form-element.has-valid{
+  border-bottom: 2px solid #00ad5f;
+  transition: 0.5s;
+}
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  
+  bottom: calc((100% - 25px) / 2);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%);
+  pointer-events: none;
+
+  font-family: Poppins-Medium;
+  color: #c80000;
+  font-size: 14px;
+  line-height: 1.4;
+  
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+  
+  right: 2px;
+  text-align: left;
+  padding: 4px 30px 4px 10px;
+  
+}
+
+
+.alert-validate::after {
+  content: "\f06a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 18px;
+  bottom: calc((100% - 25px) / 2);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%);
+  right: 8px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.true-validate::after {
+  content: "\f058";
+  font-family: FontAwesome;
+  font-size: 22px;
+  color: #00ad5f;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: calc((100% - 25px) / 2);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  transform: translateY(50%);
+  
+  right: 20px;
+}
