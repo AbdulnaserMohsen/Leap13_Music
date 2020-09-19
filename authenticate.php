@@ -21,15 +21,26 @@ function validation()
 	return $valid;
 }
 
-if(validation())
+if(validation() && !isset($_SESSION['loggedin']) && !isset($_SESSION['name']))
 {
 	$api_url = 'https://nilepromotion.com/pa-test/wp-json/test/v2/creds?username='. $_POST['username'] .'&password='. $_POST['password'] ;
 
-	// Read JSON file
-	$json_data = file_get_contents($api_url);
+	// // Read JSON file
+	// $json_data = file_get_contents($api_url);
 
-	// Decode JSON data into PHP array
-	$response_data = json_decode($json_data);
+	// echo $json_data;
+	// // Decode JSON data into PHP array
+	// $response_data = json_decode($json_data);
+	// echo $response_data->login;
+
+	$ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $api_url);
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+    $response_data = curl_exec ($ch);
+    curl_close ($ch); 
+    //echo $response_data;
+    $response_data = json_decode($response_data);
+
 
 	if($response_data->login == "successful")
 	{
@@ -47,7 +58,7 @@ if(validation())
 		echo json_encode($jsonReplay);
 	}
 
-	
+ 
 }
 
 

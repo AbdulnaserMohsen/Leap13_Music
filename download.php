@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+if(isset($_SESSION['loggedin']) && $_SESSION['name'] != '') 
+{
 	if(isset($_GET['file']))
 	{
 	    // Get parameters
@@ -17,6 +20,12 @@
 	    die();
 	        
 	}
+}
+else
+{
+	echo "login first";
+}
+	
 
 
 ?>
